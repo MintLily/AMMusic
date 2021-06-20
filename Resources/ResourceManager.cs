@@ -17,7 +17,7 @@ namespace AMMusic.Resources
     class ResourceManager
     {
         static AssetBundle Bundle;
-        public static Texture2D Menu, Play, Pause, Next, Back, VolUp, VolDown, VolMute;
+        public static Texture2D Menu, Play, Next, Back, VolUp, VolDown, VolMute;
 
         static Texture2D LoadTexture(string Texture)
         {
@@ -31,15 +31,12 @@ namespace AMMusic.Resources
         {
             // Came from UIExpansionKit (https://github.com/knah/VRCMods/blob/master/UIExpansionKit)
             MelonLogger.Msg("Loading AssetBundle...");
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("AMMusic.Resources.ammusic.lily"))
-            {
-                using (var memoryStream = new MemoryStream((int)stream.Length))
-                {
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("AMMusic.Resources.ammusic.lily")) {
+                using (var memoryStream = new MemoryStream((int)stream.Length)) {
                     stream.CopyTo(memoryStream);
                     Bundle = AssetBundle.LoadFromMemory_Internal(memoryStream.ToArray(), 0);
                     try { Menu = LoadTexture("Menu.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: Menu"); }
                     try { Play = LoadTexture("Play.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: Play"); }
-                    try { Pause = LoadTexture("Pause.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: Pause"); }
                     try { Next = LoadTexture("Foward.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: Foward"); }
                     try { Back = LoadTexture("Back.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: Back"); }
                     try { VolUp = LoadTexture("VolUp.png"); } catch { MelonLogger.Error("Failed to load image from asset bundle: VolUp"); }
