@@ -11,7 +11,7 @@ Game: VRChat build 1108+ <br>
 Mod: [ActionMenuApi](https://github.com/gompocp/ActionMenuApi) v0.3.0+
 
 ### Preview
-![Preview](https://kortyboi.com/img/upload/VRChat_HQgV7HVXv9.png)
+![Preview](https://mintlily.lgbt/img/upload/VRChat_HQgV7HVXv9.png)
 
 # Change Log
 ### v1.0.0
